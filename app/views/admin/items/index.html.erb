@@ -1,0 +1,29 @@
+<div>
+    <h2>商品一覧</h2>
+    <div>商品追加ボタン</div>
+
+    <div>
+        <table class="teble">
+            <thead>
+                <tr>
+                    <th>商品ID</th>
+                    <th>商品名</th>
+                    <th>税抜価格</th>
+                    <th>ジャンル</th>
+                    <th>ステータス</th>
+                </tr>
+            </thead>
+            <tobody>
+                <% @items.each do |items| %>
+                <tr>
+                    <td><%= items.id %></td>
+                    <td><%= items.name %></td>
+                    <td><%= items.price %></td>
+                    <td><%= items.genre_id %></td>
+                    <td><%= items.is_active %></td>
+                </tr>
+                <% end %>
+            </tobody>
+        </table>
+    </div>
+</div>
