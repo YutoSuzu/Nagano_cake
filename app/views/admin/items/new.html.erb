@@ -2,6 +2,41 @@
   <h2>商品新規登録</h2>
   <div>
     <%= form_with model: @items do |f| %>
+      <div>
+        <%= f.label :商品画像 %>
+
+      </div>
+      <div>
+        <%= f.label :商品名 %>
+        <%= f.text_field :name %>
+      </div>
+      <div>
+        <%= f.label :商品説明 %>
+        <%= f.text_area :introduction %>
+      </div>
+      <div>
+        <%= f.label :ジャンル %>
+        <%= f.select :genre_id, [["ケーキ","1"],["クッキー","2"]], include_blank:"選択してください" %>
+
+      </div>
+      <div>
+        <%= f.label :税抜価格 %>
+        <%= f.text_field :price %>円
+      </div>
+      <div>
+        <%= f.label :販売ステータス%>
+
+        <label><%= f.radio_button :is_active, "false" %>販売中</label>
+        <label><%= f.radio_button :is_active, "ture" %>販売休止</label>
+
+
+      </div>
+      <div>
+        <%= f.submit "新規登録",class: "btn btn-outline-dark" %>
+      </div>
+      <% end %>
+
 
   </div>
 </div>
+

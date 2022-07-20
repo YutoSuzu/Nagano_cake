@@ -5,12 +5,12 @@ class Admin::ItemsController < ApplicationController
   end
 
   def new
-    @items = Item.new
+    @item = Item.new
   end
 
   def create
-    items = Item.new(item_params)
-    items.save
+    item = Item.new(item_params)
+    item.save
     redirect_to '/items'
   end
 
